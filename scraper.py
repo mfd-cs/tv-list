@@ -15,13 +15,10 @@ WANTED_CHANNELS = [
     "Kanal D", "Star TV", "24 TV", "360 TV", "Kanal 7", "Beyaz TV", "TV 100", 
     "Ülke TV", "TGRT Haber", "Bloomberg HT", "TV 8.5", "DMAX", "Kardelen TV", 
     "Kocaeli TV", "Ekol TV", "TLC", "TVNET", "NOW TV", "TELE1", "teve2", "Balkan Türk",
-    "Halk TV", "Çiftçi TV", "Köy TV", "Çocuklara Özel TV", "Erzurum Web TV", "Euro D", 
-    "Finans Türk", "TBMM TV", "Toprak TV", "TRT Avaz", "TRT EBA", "Yaban TV", 
-    "Çizgi Film TV", "DHA 1", "DHA 2", "İHA 1", "İHA 2", "Kanal 7 Avrupa", "Kanal Avrupa",
+    "Halk TV", "Çiftçi TV", "Köy TV", "Erzurum Web TV", "TBMM TV", "Toprak TV", "TRT Avaz", 
+    "DHA 1", "DHA 2", "İHA 1", "İHA 2", "Kanal 7 Avrupa", "Kanal Avrupa",
     "A Para", "A2", "ATV Avrupa", "Çay TV", "CGTN Belgesel", "CNBC-e", "Minika Çocuk",
-    "ABN Turkey", "Aile TV", "Al Zahra Turkic", "ASF TV", "Asr-ı Saadet TV", "Aşr-ı Şerif TV",
-    "Belgesel TV", "Dost TV", "İkra TV", "İlahi TV", "İlmihal TV",
-    "Show Max", "Show Türk" # Sona eklenenler (Cartoon Network ve Minika Go silindi)
+    "Show Max", "Show Türk"
 ]
 
 def generate_custom_m3u():
