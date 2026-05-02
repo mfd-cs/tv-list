@@ -1,28 +1,33 @@
 name: Update M3U Playlist
 on:
   schedule:
-    - cron: '0 */12 * * *'
-  workflow_dispatch:
+    - cron: '0 */8 * * *' # Tam olarak her 8 saatte bir otomatik çalışır
+  workflow_dispatch: # Manuel çalıştırma butonunu aktif tutar
+
 jobs:
   build:
     runs-on: ubuntu-latest
-    permissions: # Bu satırları ekleyerek izni garantiye alıyoruz
+    permissions:
       contents: write
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4 # En güncel sürüme yükseltildi
+
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5 # En güncel sürüme yükseltildi
         with:
           python-version: '3.10'
+
       - name: Install dependencies
         run: pip install requests
+
       - name: Run scraping script
         run: python scraper.py
+
       - name: Commit and push changes
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add custom_playlist.m3u
-          git commit -m "Auto Update" || exit 0
+          git commit -m "8 saatlik otomatik güncelleme" || exit 0
           git push origin main
