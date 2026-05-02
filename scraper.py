@@ -2,8 +2,8 @@ import requests
 
 SOURCE_URL = "https://streams.uzunmuhalefet.com/lists/tr.m3u"
 
-# CNN Türk için kullandığımız çalışan özel link
-CNN_TURK_STATIC = """#EXTINF:-1 tvg-id="" tvg-name="CNN Türk" tvg-logo="https://raw.githubusercontent.com/fshmstr/Logos/master/Haber/CNN%20Turk.png" group-title="Haber",CNN Türk
+# CNN Türk sabit bloğu - group-title'ı "Kendi Listem" yaptık
+CNN_TURK_STATIC = """#EXTINF:-1 tvg-id="" tvg-name="CNN Türk" tvg-logo="https://raw.githubusercontent.com/fshmstr/Logos/master/Haber/CNN%20Turk.png" group-title="Kendi Listem",CNN Türk
 https://live.dogantv.com.tr/cnn_turk/cnn_turk.m3u8"""
 
 WANTED_CHANNELS = [
@@ -21,21 +21,35 @@ def generate_custom_m3u():
         response = requests.get(SOURCE_URL)
         response.raise_for_status()
         lines = response.text.splitlines()
+        
         custom_playlist = ["#EXTM3U"]
+        
         for wanted in WANTED_CHANNELS:
             if wanted == "CNN Türk":
                 custom_playlist.append(CNN_TURK_STATIC)
                 continue
-            i = 0
-            while i < len(lines):
-                if lines[i].startswith("#EXTINF") and f',{wanted}' in lines[i]:
-                    custom_playlist.append(lines[i])
+                
+            for i in range(len(lines)):
+                line = lines[i]
+                if line.startswith("#EXTINF") and f',{wanted}' in line:
+                    # BURASI KRİTİK: group-title kısmını silip tek bir başlık yapıyoruz
+                    # 'group-title="..."' kısmını bulup "Kendi Listem" ile değiştiriyoruz
+                    parts = line.split('group-title="')
+                    if len(parts) > 1:
+                        meta_data = parts[0]
+                        remaining = parts[1].split('"', 1)[1]
+                        new_line = f'{meta_data}group-title="Kendi Listem"{remaining}'
+                        custom_playlist.append(new_line)
+                    else:
+                        custom_playlist.append(line)
+                        
                     if i + 1 < len(lines):
                         custom_playlist.append(lines[i+1])
                     break
-                i += 1
+            
         with open("custom_playlist.m3u", "w", encoding="utf-8") as f:
             f.write("\n".join(custom_playlist))
+            
     except Exception as e:
         print(f"Hata: {e}")
 
