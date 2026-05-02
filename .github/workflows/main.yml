@@ -1,20 +1,23 @@
 name: Update M3U Playlist
 on:
   schedule:
-    - cron: '0 */8 * * *' # Tam olarak her 8 saatte bir otomatik çalışır
-  workflow_dispatch: # Manuel çalıştırma butonunu aktif tutar
+    - cron: '0 */8 * * *'
+  workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+    # Aşağıdaki env bloğu Node.js 20 uyarısını tamamen ortadan kaldırır
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4 # En güncel sürüme yükseltildi
+        uses: actions/checkout@v4
 
       - name: Set up Python
-        uses: actions/setup-python@v5 # En güncel sürüme yükseltildi
+        uses: actions/setup-python@v5
         with:
           python-version: '3.10'
 
@@ -29,5 +32,5 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add custom_playlist.m3u
-          git commit -m "8 saatlik otomatik güncelleme" || exit 0
+          git commit -m "8 saatlik otomatik güncelleme ve Node24 fix" || exit 0
           git push origin main
