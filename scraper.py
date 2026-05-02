@@ -14,7 +14,7 @@ WANTED_CHANNELS = [
     "CNN Türk", "Habertürk", "NTV", "A Haber", "A Spor", "ATV", "TV8", "Show TV", 
     "Kanal D", "Star TV", "24 TV", "360 TV", "Kanal 7", "Beyaz TV", "TV 100", 
     "Ülke TV", "TGRT Haber", "Bloomberg HT", "TV 8.5", "DMAX", "Kardelen TV", 
-    "Kocaeli TV", "Ekol TV", "TLC", "TVNET", "NOW TV", "TELE1", "teve2", "Balkan Türk",
+    "Kocaeli TV", "Balkan Türk",
     "Halk TV", "Çiftçi TV", "Köy TV", "Erzurum Web TV", "TBMM TV", "Toprak TV", "TRT Avaz", 
     "DHA 1", "DHA 2", "İHA 1", "İHA 2", "Kanal 7 Avrupa", "Kanal Avrupa",
     "A Para", "A2", "ATV Avrupa", "Çay TV", "CGTN Belgesel", "CNBC-e", "Minika Çocuk",
