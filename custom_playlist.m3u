@@ -61,6 +61,8 @@ https://streams.uzunmuhalefet.com/stream/36931c3c-b36b-45eb-89c8-ffdcea8a9329.m3
 https://streams.uzunmuhalefet.com/stream/88228e59-ca29-4b4a-95e5-e9152bd9e1b4.m3u8
 #EXTINF:-1 group-title="TV KANALLARI"  tvg-logo="https://assets.uzunmuhalefet.com/logos/8dbef7ca-af5a-446c-83dc-cf7b32bbe5a8.png" tvg-url="https://www.dmax.com.tr/" tvg-id="DMAX.tr",DMAX
 https://streams.uzunmuhalefet.com/stream/ca37ad2f-27a2-4227-9e04-fdd4b2279f3e.m3u8
+#EXTINF:-1 group-title="TV KANALLARI"  tvg-logo="https://assets.uzunmuhalefet.com/logos/a5df1c55-89f6-4c94-93b9-ea17c1c81fb5.png" tvg-url="https://www.kardelentv.com.tr/" tvg-id="",Kardelen TV
+https://streams.uzunmuhalefet.com/stream/a72319f1-0c82-497e-afc4-16e89b0f4810.m3u8
 #EXTINF:-1 group-title="TV KANALLARI"  tvg-logo="https://assets.uzunmuhalefet.com/logos/235b15b6-a9c3-41e5-a80d-6b6e156a1f19.png" tvg-url="https://www.kocaelitv.com.tr/" tvg-id="",Kocaeli TV
 https://streams.uzunmuhalefet.com/stream/c79133e0-ff14-4fad-8c00-cf05796f32db.m3u8
 #EXTINF:-1 group-title="TV KANALLARI"  tvg-logo="https://assets.uzunmuhalefet.com/logos/d0535f53-9efe-4747-aebe-fe66044ae991.png" tvg-url="https://www.balkanlartv.com/" tvg-id="",Balkan Türk
